@@ -1,0 +1,163 @@
+.header{
+    @include margins-base;
+    @include flex-center;
+    font-weight: $font-weight-base;
+    margin-bottom: 90px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    
+    &__logo{
+        width: 126px;
+        margin-right: 350px;
+    }
+
+    
+
+    &__nav{
+        flex-shrink: 0 ;
+        width: 500px;
+        @include flex-center;
+        color: $lightblack;
+        margin-right: 70px;
+
+        &__home{
+            font-weight: $font-weight-bold;
+        }
+
+        &__home, &__about , &__services, &__teams{
+            color: $lightblack;
+        }
+    }
+
+    &__button{
+        background-color:$blue;
+        color: $white;
+        flex-wrap: nowrap;
+        
+    }
+
+    @media (max-width:1250px) {
+        .header{
+            @include margins-medium;
+        }
+        &__logo{
+            margin-right: 100px;
+        }
+    }
+}
+
+
+.info{
+    @include margins-base;
+    @include flex-column;
+    margin-bottom: 160px;
+
+    &__text{
+        @include flex-center;
+        color: $lightblack;
+        width: 100%;
+        &__quote{
+            font-size: $font-size-bigger;
+            font-weight: $font-weight-bolder;
+            width: 680px;
+            position: relative;
+
+            
+
+            &::after{
+                position: absolute;
+                content: '';
+                height: 3px;
+                width: 700px;
+                background-color: $black;
+                top:50px;
+                left:610px;
+            }
+
+           
+        }
+
+        &__reversed-text{
+            width: 178px;
+            font-weight: $font-weight-medium;
+            transform: rotate(-90deg);
+            margin-right: -60px;
+            margin-bottom: -170px;
+        }
+    }
+    
+    &__picture{
+        margin-top:40px;
+        position: relative;
+
+        &__img{
+            z-index: -1;
+            width: 1400px;
+            
+        }
+
+        &__details{
+            @include flex-column;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: $blue;
+            width: 252px;
+            color: $white;
+            padding-top:40px;
+            padding-bottom:40px;
+            top: -210px;
+            right: 180px;            
+
+            &__count{
+                font-size: $font-size-big;
+            }
+
+            &__name{
+                font-size: $font-size-small; 
+            }
+        }
+    }
+
+    @media (max-width:1250px) {
+        .info{
+            @include margins-medium;
+
+            &__text{
+                
+                &__quote{
+                    font-size:$font-size-big;
+                    width: 340px;
+
+                    &::after{
+                        content: none;
+                    }
+                }
+                &__reversed-text{
+                    font-size: $font-size-smaller;
+                    margin-top:-80px;
+                }
+            }
+
+        }
+        &__picture__details{
+            width: 150px;
+            padding-left:8px;
+            padding-right: 8px;
+            &__count{
+                font-size: $font-size-medium;
+            }
+            &__name{
+                font-size: $font-size-smaller;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
