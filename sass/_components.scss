@@ -1,6 +1,7 @@
 .header{
     @include margins-base;
-    @include flex-center;
+    @include flex-center-space;
+    margin-top:40px;
     font-weight: $font-weight-base;
     margin-bottom: 90px;
     flex-wrap: nowrap;
@@ -11,12 +12,10 @@
         margin-right: 350px;
     }
 
-    
-
     &__nav{
         flex-shrink: 0 ;
         width: 500px;
-        @include flex-center;
+        @include flex-center-space;
         color: $lightblack;
         margin-right: 70px;
 
@@ -32,20 +31,41 @@
     &__button{
         background-color:$blue;
         color: $white;
-        flex-wrap: nowrap;
-        
+        flex-wrap: nowrap;  
     }
 
-    @media (max-width:1250px) {
-        .header{
-            @include margins-medium;
-        }
+    @media (max-width:1300px) {
+        @include margins-medium;
+        
         &__logo{
-            margin-right: 100px;
+            margin-right: 80px;
+        }
+
+        &__nav{
+            font-size: $font-size-smaller;
+            width: 400px;
+            margin-right: 40px;
+        }
+
+        &__button{
+            font-size: $font-size-smaller;
+        }
+    }
+
+    @media (max-width:800px) {
+        &__logo{
+            margin-right: 20px;
+        }
+
+        &__nav{
+            width: 280px;
+        }
+
+        &__button{
+            padding:8px 16px;
         }
     }
 }
-
 
 .info{
     @include margins-base;
@@ -53,7 +73,7 @@
     margin-bottom: 160px;
 
     &__text{
-        @include flex-center;
+        @include flex-center-space;
         color: $lightblack;
         width: 100%;
         &__quote{
@@ -61,8 +81,6 @@
             font-weight: $font-weight-bolder;
             width: 680px;
             position: relative;
-
-            
 
             &::after{
                 position: absolute;
@@ -72,9 +90,7 @@
                 background-color: $black;
                 top:50px;
                 left:610px;
-            }
-
-           
+            }   
         }
 
         &__reversed-text{
@@ -92,15 +108,12 @@
 
         &__img{
             z-index: -1;
-            width: 1400px;
-            
+            width: 1400px;   
         }
 
         &__details{
             @include flex-column;
             position: absolute;
-            align-items: center;
-            justify-content: center;
             text-align: center;
             background-color: $blue;
             width: 252px;
@@ -120,31 +133,31 @@
         }
     }
 
-    @media (max-width:1250px) {
-        .info{
-            @include margins-medium;
+    @media (max-width:1300px) {
+        @include margins-medium;
+        margin-bottom: 60px;
 
-            &__text{
+        &__text{
                 
-                &__quote{
-                    font-size:$font-size-big;
-                    width: 340px;
+            &__quote{
+                font-size:$font-size-big;
+                width: 340px;
 
-                    &::after{
-                        content: none;
-                    }
-                }
-                &__reversed-text{
-                    font-size: $font-size-smaller;
-                    margin-top:-80px;
+                &::after{
+                    content: none;
                 }
             }
 
+            &__reversed-text{
+                font-size: $font-size-smaller;
+                margin-top:-80px;
+            }
         }
+
         &__picture__details{
-            width: 150px;
-            padding-left:8px;
-            padding-right: 8px;
+            width: 200px;
+            padding-top:20px;
+            padding-bottom:20px;
             &__count{
                 font-size: $font-size-medium;
             }
@@ -152,12 +165,178 @@
                 font-size: $font-size-smaller;
             }
         }
+    }
+
+    @media (max-width:800px){
+        &__picture__details{
+            padding: 5px 0;
+            top:-30px;
+            &__count{
+                font-size: $font-size-base;
+            }
+        }
+
+    }
+}
+
+.about{
+    @include margins-base;
+    @include flex-column;
+    row-gap: 60px;
+    margin-bottom: 160px;
+
+    &__top{
+        @include flex-column;
+        row-gap: 20px;
+
+        &__title{
+        font-size: $font-size-small;
+        color:$black;
+        font-weight: $font-weight-medium;
+        position: relative;
+
+            &::after{
+                content: '';
+                height: 1px;
+                background-color: $black;
+                width: 520px;
+                position: absolute;
+                top:10px;
+                left:70px;
+            }
+        }
+
+        &__quote {
+            font-size:$font-size-medium;
+            color: $lightblack;
+            font-weight: $font-weight-bold;
+        } 
+    }
+
+    &__bottom{
+        @include flex-row;
+        column-gap: 90px;
+
+        &__left{
+            position: relative;
+            &__img{
+                min-width: 250px;
+                width: 880px;
+                z-index: -1;
+            }
+
+            &__ceo{
+                background-color: $white;
+                width: 275px;
+                position: absolute;
+                @include flex-row;
+                column-gap: 15px;
+                padding: 19px 50px 19px 20px;
+                top: 30px;
+                right: -200px;
+                box-shadow: 10px 10px 40px $black-shadow;
+
+                &__info{
+                    @include flex-column;
+
+                    &__name{
+                        font-weight: $font-weight-bold;
+                    }
+
+                    &__position{
+                        color: $gray;
+                    }
+                }
+            }
+        }
+        &__right{
+            @include flex-column;
+            row-gap:40px;
+            align-items: flex-start;
+
+            &__text{
+                width: 223px;
+                color: $gray;
+                font-size: $font-size-base;
+            }
+
+            &__button{
+                background-color: $blue;
+                color: $white;
+                font-size: $font-size-smaller;
+                font-weight: $font-weight-medium;
+            }
+        }
+    }
+    @media (max-width:1300px) {
+        @include margins-medium;
+        row-gap:20px;
+        &__top{
+
+            &__title{
+                font-size: $font-size-small;
+
+                &::after{
+                    width: 400px;
+                }
+            }
+
+            &__quote{
+                font-size: $font-size-base;
+            }
+        }
+
+        &__bottom{
+
+            &__left__ceo{
+                width: 250px;
+                top:10px;
+                right: -70px;
+                padding: 10px 20px 10px 5px;
+            }
+
+        }
+
 
     }
 
+    @media (max-width:800px) {
+        &__bottom{
+        
+            &__left__ceo{
+                width: 180px;
+                top:10px;
+                right: -80px;
+                padding: 5px 10px 5px 5px;
+
+                &__info{
+
+                    &__name{
+                        font-size: $font-size-smaller;
+                    }
+
+                    &__position{
+                        font-size: $font-size-smaller
+                    }
+                }
+
+            }
+
+            &__right{
+
+                &__text{
+                    font-size: $font-size-smaller;
+                }
+    
+                &__button{
+                    padding:8px 16px;
+                    font-size: $font-size-smaller;
+                    font-weight: $font-weight-base;
+                }
+            }
+        }
+
+    }
+
+
 }
-
-
-
-
-
