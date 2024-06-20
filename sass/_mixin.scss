@@ -9,16 +9,22 @@
     align-items: center;
 }
 
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
 @mixin margins-base{
     margin-left:100px;
     margin-right: 100px;
 }
+
 @mixin margins-medium{
     margin-left: 30px;
     margin-right: 30px;
 }
 
-@mixin flex-column{
-    display: flex;
-    flex-direction: column;
+@mixin margins-mobile{
+    margin-left: 10px;
+    margin-right: 10px;
 }
