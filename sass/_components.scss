@@ -80,8 +80,9 @@
         &__quote{
             font-size: $font-size-bigger;
             font-weight: $font-weight-bolder;
-            width: 680px;
+            width: 700px;
             position: relative;
+
 
             &::after{
                 position: absolute;
@@ -133,6 +134,12 @@
             &__name{
                 font-size: $font-size-small; 
             }
+        }
+    }
+
+    @media (max-width:1400px){
+        &__text__quote::after{
+            width: 500px;
         }
     }
 
@@ -370,7 +377,7 @@
         row-gap: 20px;
         background-color: $white;
         padding-right: 40px;
-        max-width: 880px;
+        max-width: 850px;
         color: $lightblack;
     
         &__title{
@@ -423,7 +430,7 @@
         position: absolute;
         z-index: -1;
         top:304px;
-        left: 124px;
+        left: 90px;
     }
 
     @media (max-width:1300px){
@@ -443,6 +450,7 @@
         }
 
         &__img{
+            width: 900px;
             left:70px;
         }
     }
@@ -598,7 +606,7 @@
 .material{
     @include margins-base;
     @include flex-row;
-    margin-bottom: 120px;
+    margin-bottom: 160px;
     position: relative;
 
     &__left{
@@ -650,17 +658,17 @@
 
         .pic-1{
             top: 50px;
-            left:610px;
+            left:580px;
         }
 
         .pic-2{
             top: -55px;
-            left:1000px;
+            left:960px;
         }
 
         .pic-3{
             top: 220px;
-            left: 1000px;
+            left: 960px;
         }
     }
 
@@ -746,6 +754,197 @@
                 width: 95px;
                 top: 165px;
                 left:450px;
+            }
+        }
+    }
+}
+
+.footer{
+    width: 100vw;
+    background-color: $blue;
+    height: 200px;
+    margin-bottom: 100px;
+    &__container{
+        @include margins-base;
+        height: inherit;
+        @include flex-row;
+        column-gap: 20px;
+
+        &__quote{
+            font-size: $font-size-medium;
+            font-weight: $font-weight-bold;
+            color: $white;
+            width: 610px;
+        }
+
+        &__right{
+            width: 430px;
+            margin-left: auto;
+
+            &__text{
+                color: $lightgray;
+                margin-bottom: 20px;
+
+            }
+
+            &__button{
+                font-size: $font-size-smaller;
+                font-weight: $font-weight-medium;
+                color: $lightblack;
+                background-color: $white;
+            }
+        }
+    }
+
+    @media (max-width:1300px){
+        &__container{
+            @include margins-medium;
+            &__quote{
+                width: 580px;
+                font-size: $font-size-under-medium;
+                font-weight: $font-weight-medium;
+            }
+
+            &__right{
+                width: 370px;
+            }
+        }
+    }
+    @media (max-width:800px){
+        &__container{
+            @include margins-medium;
+            &__quote{
+                width: 500px;
+                font-size: $font-size-base;
+                font-weight: $font-weight-medium;
+            }
+
+            &__right{
+                width: 370px;
+
+                &__text{
+                    font-size: $font-size-small;
+                }
+
+                &__button{
+                    padding: 10px 16px;
+                }
+            }
+        }
+    }
+}
+
+.social{
+    @include margins-base;
+    @include flex-row;
+    margin-bottom:80px;
+
+    &__left{
+        @include flex-column;  
+        row-gap: 10px;
+
+        &__logo{
+            width: 126px;
+        }
+
+        &__quote{
+            font-size: $font-size-medium;
+            font-weight: $font-weight-bold;
+            color: $lightblack;
+            width: 480px;
+        }
+    }
+
+    &__right{   
+        margin-left: auto;
+        @include flex-column;
+        row-gap:40px;
+
+        &__top{
+            @include flex-column;
+            row-gap: 20px;
+
+            &__text{
+                @include flex-row;
+                column-gap:10px;
+                &__quote{
+                    color: $lightblack;
+                }
+            }
+
+            &__input{
+                @include flex-row;
+
+                &__email{
+                    font-size: $font-size-small;
+                    color: $lightblack;
+                    width: 450px;
+                    border-bottom: solid 1px $alt-black;
+                    padding: 5px 5px 15px 1px;
+
+                    &::placeholder{
+                        font-size: $font-size-small;
+                        color:$lightgray;
+
+                    }
+
+                }
+
+                &__arrow{
+                    cursor: pointer;
+                    margin-left: auto;
+                    margin-bottom: auto;
+                }
+            }
+        }
+
+        &__bottom{
+            margin-left: auto;
+
+            &__text{
+                font-size: $font-size-small;
+                margin-bottom: 15px;
+                color: $lightblack;
+
+            }
+
+            &__links{
+                @include flex-center-space;
+                width: 200px;
+
+                .social-media{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1300px){
+        @include margins-medium;
+
+        &__left{
+            &__logo{
+                width: 100px;
+            }
+
+            &__quote{
+                font-size: $font-size-under-medium;
+                max-width: 300px;
+            }
+        }
+
+        &__right{
+            &__top{
+                &__text{
+                    &__quote{
+                        max-width: 350px;
+                    }
+                }  
+                &__input{
+                    &__email{
+                        width: 350px;
+                    }
+                }
             }
         }
     }

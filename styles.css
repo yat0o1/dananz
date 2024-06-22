@@ -145,7 +145,7 @@ button {
 .info__text__quote {
   font-size: 72px;
   font-weight: 700;
-  width: 680px;
+  width: 700px;
   position: relative;
 }
 .info__text__quote::after {
@@ -192,6 +192,11 @@ button {
 }
 .info__picture__details__name {
   font-size: 16px;
+}
+@media (max-width: 1400px) {
+  .info__text__quote::after {
+    width: 500px;
+  }
 }
 @media (max-width: 1300px) {
   .info {
@@ -390,7 +395,7 @@ button {
   row-gap: 20px;
   background-color: #FFFFFF;
   padding-right: 40px;
-  max-width: 880px;
+  max-width: 850px;
   color: #333333;
 }
 .service__text__title {
@@ -437,7 +442,7 @@ button {
   position: absolute;
   z-index: -1;
   top: 304px;
-  left: 124px;
+  left: 90px;
 }
 @media (max-width: 1300px) {
   .service {
@@ -450,6 +455,7 @@ button {
     height: 1px;
   }
   .service__img {
+    width: 900px;
     left: 70px;
   }
 }
@@ -582,7 +588,7 @@ button {
   margin-right: 100px;
   display: flex;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 160px;
   position: relative;
 }
 .material__left__title {
@@ -625,15 +631,15 @@ button {
 }
 .material__right .pic-1 {
   top: 50px;
-  left: 610px;
+  left: 580px;
 }
 .material__right .pic-2 {
   top: -55px;
-  left: 1000px;
+  left: 960px;
 }
 .material__right .pic-3 {
   top: 220px;
-  left: 1000px;
+  left: 960px;
 }
 @media (max-width: 1300px) {
   .material {
@@ -693,6 +699,172 @@ button {
     width: 95px;
     top: 165px;
     left: 450px;
+  }
+}
+
+.footer {
+  width: 100vw;
+  background-color: #2C3878;
+  height: 200px;
+  margin-bottom: 100px;
+}
+.footer__container {
+  margin-left: 100px;
+  margin-right: 100px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.footer__container__quote {
+  font-size: 36px;
+  font-weight: 600;
+  color: #FFFFFF;
+  width: 610px;
+}
+.footer__container__right {
+  width: 430px;
+  margin-left: auto;
+}
+.footer__container__right__text {
+  color: #D9D9D9;
+  margin-bottom: 20px;
+}
+.footer__container__right__button {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+@media (max-width: 1300px) {
+  .footer__container {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .footer__container__quote {
+    width: 580px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .footer__container__right {
+    width: 370px;
+  }
+}
+@media (max-width: 800px) {
+  .footer__container {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .footer__container__quote {
+    width: 500px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .footer__container__right {
+    width: 370px;
+  }
+  .footer__container__right__text {
+    font-size: 16px;
+  }
+  .footer__container__right__button {
+    padding: 10px 16px;
+  }
+}
+
+.social {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.social__left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.social__left__logo {
+  width: 126px;
+}
+.social__left__quote {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333333;
+  width: 480px;
+}
+.social__right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.social__right__top {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.social__right__top__text {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.social__right__top__text__quote {
+  color: #333333;
+}
+.social__right__top__input {
+  display: flex;
+  align-items: center;
+}
+.social__right__top__input__email {
+  font-size: 16px;
+  color: #333333;
+  width: 450px;
+  border-bottom: solid 1px #141414;
+  padding: 5px 5px 15px 1px;
+}
+.social__right__top__input__email::placeholder {
+  font-size: 16px;
+  color: #D9D9D9;
+}
+.social__right__top__input__arrow {
+  cursor: pointer;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+.social__right__bottom {
+  margin-left: auto;
+}
+.social__right__bottom__text {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+.social__right__bottom__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+.social__right__bottom__links .social-media {
+  cursor: pointer;
+}
+@media (max-width: 1300px) {
+  .social {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .social__left__logo {
+    width: 100px;
+  }
+  .social__left__quote {
+    font-size: 24px;
+    max-width: 300px;
+  }
+  .social__right__top__text__quote {
+    max-width: 350px;
+  }
+  .social__right__top__input__email {
+    width: 350px;
   }
 }
 
